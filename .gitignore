@@ -6,7 +6,6 @@ lib
 esm
 cjs
 
-dist.css
 
 # Log files
 npm-debug.log*

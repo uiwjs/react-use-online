@@ -1,20 +1,22 @@
-import React from 'react';
-import './styles/index.less';
+import React, { useSyncExternalStore } from 'react';
 
-export interface MonorepoTemplateProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  prefixCls?: string;
+function getSnapshot() {
+  return navigator.onLine;
 }
 
-export default function MonorepoTemplate(props: MonorepoTemplateProps = {}) {
-  const { className, prefixCls = 'w-template', children, ...others } = props;
-  const cls = [className, prefixCls].filter(Boolean).join(' ');
-  return (
-    <div {...others} className={cls}>
-      {children &&
-        React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) return child;
-          return <span> {child} </span>;
-        })}
-    </div>
-  );
+function getServerSnapshot() {
+  return true;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener('online', callback);
+  window.addEventListener('offline', callback);
+  return () => {
+    window.removeEventListener('online', callback);
+    window.removeEventListener('offline', callback);
+  };
+}
+
+export function useOnline() {
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

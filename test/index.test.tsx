@@ -1,13 +1,15 @@
-/**
- * @jest-environment jsdom
- */
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import React from 'react';
-import MonorepoTemplate from '../core/src';
+import { renderHook } from '@testing-library/react';
+import { useOnline } from '../core/src';
 
-test('renders learn react link', () => {
-  render(<MonorepoTemplate>learn react</MonorepoTemplate>);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('useOnline', () => {
+  it('should return true when online status is true', () => {
+    jest.spyOn(navigator, 'onLine', 'get').mockReturnValueOnce(true);
+    const { result } = renderHook(() => useOnline());
+    expect(result.current).toBe(true);
+  });
+  it('should return true when online status is false', () => {
+    jest.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const { result } = renderHook(() => useOnline());
+    expect(result.current).toBe(false);
+  });
 });

@@ -1,19 +1,17 @@
 {
-  "name": "@uiw/react-monorepo-template",
-  "version": "1.1.0",
-  "description": "React Monorepo Template.",
+  "name": "@uiw/react-use-online",
+  "version": "0.0.1",
+  "description": "useOnline is a tiny, zero-dependency hook for responding to online/offline changes.",
   "author": "Kenny Wong <wowohoo@qq.com>",
-  "homepage": "https://uiwjs.github.io/react-monorepo-template",
+  "homepage": "https://uiwjs.github.io/react-use-online",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uiwjs/react-monorepo-template.git"
+    "url": "https://github.com/uiwjs/react-use-online.git"
   },
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "files": [
-    "dist.css",
-    "dist",
     "cjs",
     "esm",
     "src"
@@ -22,21 +20,20 @@
     "access": "public"
   },
   "keywords": [
-    "react-monorepo-template",
+    "react-use-online",
     "react.js",
     "react",
-    "template",
-    "monorepo",
-    "monorepo-template",
+    "online",
+    "network",
+    "hook",
+    "hooks",
+    "reacthook",
     "uiw",
     "uiw-react",
     "react-component",
     "component",
     "components",
     "ui",
-    "css",
-    "uikit",
-    "react-ui",
     "framework"
   ],
   "peerDependencies": {
@@ -45,8 +42,6 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.18.9",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
