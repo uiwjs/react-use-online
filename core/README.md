@@ -3,6 +3,7 @@ React useOnline Hook
 
 [![Build & Deploy](https://github.com/uiwjs/react-use-online/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-use-online/actions/workflows/ci.yml)
 [![Coverage Status](https://uiwjs.github.io/react-use-online/badges.svg)](https://uiwjs.github.io/react-use-online/coverage/lcov-report/)
+[![NPM Version](https://img.shields.io/npm/v/@uiw/react-use-online.svg)](https://www.npmjs.com/package/@uiw/react-use-online)
 
 `useOnline` is a tiny, zero-dependency, SSR hook for responding to online/offline changes.
 
