@@ -33,6 +33,10 @@ export default function App() {
 }
 ```
 
+## Related
+
+- [useColorScheme](https://github.com/uiwjs/react-use-colorscheme) `useColorScheme()` is a tiny, zero-dependency, SSR hook for responding to devices color scheme changes.
+
 ## Contributors
 
 As always, thanks to our amazing contributors!
